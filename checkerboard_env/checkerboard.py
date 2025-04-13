@@ -58,6 +58,7 @@ class CheckerBoardEnv(gym.Env):
     def reward_handler(self, activation):
         noise = np.random.normal(0, 1/self.snr, size=1)
         reward = activation + noise
+        reward = 2 * reward + 1.5
         return reward
 
     def step(self, action):

@@ -1,6 +1,6 @@
 from scipy.special import softmax
 from scipy.signal import convolve2d
-from agents.utils import *
+from .utils import *
 import numpy as np
 
 
@@ -91,7 +91,7 @@ class SoftQAgent:
         q_update[discrete_state] = self.compute_next_q_value(old_q_value, reward)
 
         # update q_table;
-        q_update = convolve2d(q_update, self.kernel, boundary='fill', mode='same')
+        q_update = convolve2d(q_update, self.kernel, boundary='symm', mode='same')
         self.q_table += q_update
         return self.q_table
 
