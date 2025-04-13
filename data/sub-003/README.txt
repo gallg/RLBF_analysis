@@ -1,3 +1,0 @@
-- all runs with different parameters, compared to simulation
-- first run trained faster, has a smaller duration
-- fieldmap acquired twice, for out-of-the-scanner break
